@@ -10,18 +10,30 @@ import argparse
 import functools
 import inspect
 import logging
+import logging.config
 import os
 import shutil
+import subprocess
 from typing import Callable, Set, Any
 
 logger = logging.getLogger(__name__)
 
-# Set up default console logging if no other configuration exists
-if not logger.handlers and not logging.getLogger().handlers:
-    handler = logging.StreamHandler()
-    handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
-    logger.addHandler(handler)
-    logger.setLevel(logging.INFO)
+def setup_logging():
+    """Configure logging with YAML if available, otherwise use basic config"""
+    try:
+        import yaml
+        with open('logging_config.yaml', 'r') as f:
+            config = yaml.safe_load(f)
+            logging.config.dictConfig(config)
+    except (ImportError, FileNotFoundError):
+        # Set up default console logging if config fails
+        if not logger.handlers and not logging.getLogger().handlers:
+            handler = logging.StreamHandler()
+            handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s: %(message)s'))
+            logger.addHandler(handler)
+            logger.setLevel(logging.INFO)
+
+setup_logging()
 
 # Exit codes
 EXIT_CODE_SUCCESS = 0
@@ -33,11 +45,23 @@ EXIT_CODE_UNKNOWN_ERROR = -1
 def task(*, depends_on: list[str] = []):
     def decorator(func: Callable) -> Callable:
         func._is_task = True  # ty: ignore[unresolved-attribute]
+        func._depends_on = depends_on  # ty: ignore[unresolved-attribute]
         @functools.wraps(func)
         def wrapper(self, *args: Any, **kwargs: Any):
-            # Run dependencies first
-            for dep in depends_on:
-                if hasattr(self, dep):
+            # Get all dependencies including inherited ones
+            all_deps = set()
+            deps_to_check = list(depends_on)
+            while deps_to_check:
+                dep = deps_to_check.pop()
+                if dep not in all_deps and hasattr(self, dep):
+                    all_deps.add(dep)
+                    dep_fn = getattr(self.__class__, dep)
+                    if hasattr(dep_fn, '_depends_on'):
+                        deps_to_check.extend(dep_fn._depends_on)
+            
+            # Run all dependencies in order if not completed
+            for dep in all_deps:
+                if dep not in self._completed:
                     getattr(self, dep)()
             
             # Get the function's signature
@@ -87,13 +111,9 @@ class Builder:
                 setup_method(task_parser)
 
     def __getattribute__(self, name: str):
-        attr = super().__getattribute__(name)
-        if getattr(attr, '_is_task', False):
-            if name not in self._completed:
-                attr()
-                self._completed.add(name)
-            return lambda: None
-        return attr
+        # Don't auto-run tasks during attribute lookup
+        # This prevents recursive task execution during dependency resolution
+        return super().__getattribute__(name)
     
     def load_env(self, env_file: str = '.env'):
         if not "setup" in self._completed:
@@ -162,15 +182,22 @@ class Builder:
             parser.add_argument('--host', default='127.0.0.1', help='Host to bind to')
             parser.add_argument('--port', type=int, default=8000, help='Port to listen on')
 
-        logger.info(f"Starting FastAPI server on {host}:{port}...")
-        # TODO: Implement server startup with host and port
+        from webapp.main import main
+        main(host=host, port=port)
 
     @task()
     def setup(self):
         """Setup local environment and verify dependencies"""
         logger.info("Setting up environment...")
-        # TODO: Implement dependency checking
-        # This would typically check for required tools, Python version, etc.
+        
+        try:
+            subprocess.run(["uv", "pip", "install", "--upgrade", "-e", "."], check=True)
+        except FileNotFoundError:
+            logger.error("uv not found. Please install uv first: pip install uv")
+            raise
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Failed to install dependencies: {e}")
+            raise
 
     @task(depends_on=["setup"])
     def test(self):
@@ -210,8 +237,15 @@ def main() -> int:
         return EXIT_CODE_INVALID_COMMAND_LINE_ARGUMENTS
 
     try:
+        task_method = getattr(builder, args.task)
+        if not getattr(task_method, '_is_task', False):
+            logger.error(f"{args.task} is not a valid task")
+            return EXIT_CODE_INVALID_COMMAND_LINE_ARGUMENTS
+            
         fn_task, pos_args, kwargs = get_task_plus_args(builder, args)
-        fn_task(*pos_args, **kwargs)
+        return_val = fn_task(*pos_args, **kwargs)
+        if return_val is not None:
+            return return_val
         return EXIT_CODE_SUCCESS
     except Exception as e:
         logger.error(f"Task failed: {e}")
