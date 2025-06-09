@@ -1,0 +1,41 @@
+# Local First Demo
+
+FastAPI application with local-first build, test, run, and deploy system.
+
+Website meant to demystify web technologies by decreasing cost to experiment.
+
+## Tech Stack
+
+- Python
+- FastAPI
+- htmx
+- SQLite
+- SQLModel
+- uv
+- uvicorn
+- pytest
+
+## Coding Style
+
+- PEP8
+- Type hints
+- Docstrings
+- minimal nested logic
+- exit early for errors
+- custom exceptions
+- logging not print
+- request object at API code, not business logic
+- SQLModel acts as data layer
+- Business logic in separate module
+
+## Testing
+
+- never mock
+- simple tests
+- prefer parameterized tests over duplicated code
+- asserts include messages
+
+## Entry Point
+
+- build.py for all tasks
+- main.py for application
