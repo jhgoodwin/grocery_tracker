@@ -49,12 +49,12 @@ def task(*, depends_on: list[str] = []):
         @functools.wraps(func)
         def wrapper(self, *args: Any, **kwargs: Any):
             # Get all dependencies including inherited ones
-            all_deps = set()
+            all_deps = []
             deps_to_check = list(depends_on)
             while deps_to_check:
                 dep = deps_to_check.pop()
                 if dep not in all_deps and hasattr(self, dep):
-                    all_deps.add(dep)
+                    all_deps.append(dep)
                     dep_fn = getattr(self.__class__, dep)
                     if hasattr(dep_fn, '_depends_on'):
                         deps_to_check.extend(dep_fn._depends_on)
@@ -76,7 +76,11 @@ def task(*, depends_on: list[str] = []):
             # Otherwise bind arguments to parameters
             bound = sig.bind(self, *args, **kwargs)
             bound.apply_defaults()
-            return func(*bound.args, **bound.kwargs)
+            result = func(*bound.args, **bound.kwargs)
+            # Mark task as completed
+            task_name = getattr(self, args[0]).__name__ if args else func.__name__ # ty: ignore[unresolved-attribute]
+            self._completed.add(task_name)
+            return result
         return wrapper
     return decorator
 
