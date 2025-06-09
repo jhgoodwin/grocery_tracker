@@ -146,12 +146,14 @@ class Builder:
         # TODO: Implement configuration validation
         # This would typically check environment variables, config files, etc.
 
-    @task()
-    def setup(self):
-        """Setup local environment and verify dependencies"""
-        logger.info("Setting up environment...")
-        # TODO: Implement dependency checking
-        # This would typically check for required tools, Python version, etc.
+    @task(depends_on=["test"])
+    def deploy(self, env: str = "dev"):
+        """Deploy the application"""
+        def _setup_parser(parser: argparse.ArgumentParser) -> None:
+            parser.add_argument('--env', default='dev', help='Environment to deploy to')
+
+        logger.info(f"Deploying to {env}...")
+        # TODO: Implement deployment logic
 
     @task(depends_on=["config"])
     def run(self, host: str = '127.0.0.1', port: int = 8000):
@@ -163,20 +165,18 @@ class Builder:
         logger.info(f"Starting FastAPI server on {host}:{port}...")
         # TODO: Implement server startup with host and port
 
+    @task()
+    def setup(self):
+        """Setup local environment and verify dependencies"""
+        logger.info("Setting up environment...")
+        # TODO: Implement dependency checking
+        # This would typically check for required tools, Python version, etc.
+
     @task(depends_on=["setup"])
     def test(self):
         """Run tests using pytest"""
         logger.info("Running tests...")
         # TODO: Implement pytest integration
-
-    @task(depends_on=["test"])
-    def deploy(self, env: str = "dev"):
-        """Deploy the application"""
-        def _setup_parser(parser: argparse.ArgumentParser) -> None:
-            parser.add_argument('--env', default='dev', help='Environment to deploy to')
-
-        logger.info(f"Deploying to {env}...")
-        # TODO: Implement deployment logic
 
     # endregion Task parsers
 
