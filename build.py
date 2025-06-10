@@ -187,7 +187,7 @@ class Builder:
         logger.info("Setting up environment...")
         
         try:
-            subprocess.run(["uv", "pip", "install", "--upgrade", "-e", "."], check=True)
+            subprocess.run(["uv", "pip", "install", "--upgrade", "."], check=True)
         except FileNotFoundError:
             logger.error("uv not found. Please install uv first: pip install uv")
             raise
