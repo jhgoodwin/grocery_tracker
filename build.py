@@ -4,7 +4,8 @@ import os
 
 # Add src to PYTHONPATH
 src_path = os.path.join(os.path.dirname(__file__), 'src')
-sys.path.insert(0, src_path)
+if src_path not in sys.path:
+    sys.path.insert(0, src_path)
 
 # Keep this version check in sync with pyproject.toml's requires-python value
 if sys.version_info < (3, 13):
@@ -19,10 +20,6 @@ import os
 import shutil
 import subprocess
 from typing import Callable, Set, Any
-
-# Add src to PYTHONPATH for config imports
-src_path = os.path.join(os.path.dirname(__file__), 'src')
-sys.path.insert(0, src_path)
 
 from config.logging import setup_logging
 logger = logging.getLogger(__name__)
