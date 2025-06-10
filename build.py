@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 import sys
+import os
+
+# Add src to PYTHONPATH
+src_path = os.path.join(os.path.dirname(__file__), 'src')
+sys.path.insert(0, src_path)
 
 # Keep this version check in sync with pyproject.toml's requires-python value
 if sys.version_info < (3, 13):
@@ -10,28 +15,17 @@ import argparse
 import functools
 import inspect
 import logging
-import logging.config
 import os
 import shutil
 import subprocess
 from typing import Callable, Set, Any
 
-logger = logging.getLogger(__name__)
+# Add src to PYTHONPATH for config imports
+src_path = os.path.join(os.path.dirname(__file__), 'src')
+sys.path.insert(0, src_path)
 
-def setup_logging():
-    """Configure logging with YAML if available, otherwise use basic config"""
-    try:
-        import yaml
-        with open('logging_config.yaml', 'r') as f:
-            config = yaml.safe_load(f)
-            logging.config.dictConfig(config)
-    except (ImportError, FileNotFoundError):
-        # Set up default console logging if config fails
-        if not logger.handlers and not logging.getLogger().handlers:
-            handler = logging.StreamHandler()
-            handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s: %(message)s'))
-            logger.addHandler(handler)
-            logger.setLevel(logging.INFO)
+from config.logging import setup_logging
+logger = logging.getLogger(__name__)
 
 setup_logging()
 
@@ -186,6 +180,7 @@ class Builder:
             parser.add_argument('--host', default='127.0.0.1', help='Host to bind to')
             parser.add_argument('--port', type=int, default=8000, help='Port to listen on')
 
+        logger.info("Starting FastAPI server...")
         from webapp.main import main
         main(host=host, port=port)
 
