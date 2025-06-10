@@ -9,6 +9,3 @@ dependencies = [
     "uvicorn==0.27.1",
     "PyYAML==6.0.1",
 ]
-
-[tool.setuptools.packages.find]
-where = ["src"]
