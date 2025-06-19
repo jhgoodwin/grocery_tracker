@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: pip install uv
         
+      - name: Setup environment
+        run: cp .env.example .env
+        
       - name: Configure
         run: python build.py config
         
