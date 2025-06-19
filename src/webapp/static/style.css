@@ -1,0 +1,128 @@
+:root {
+    --primary: #2563eb;
+    --primary-light: #60a5fa;
+    --bg: #f1f5f9;
+    --text: #1e293b;
+    --border: #e2e8f0;
+    --shadow: rgba(0, 0, 0, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
+    background: white;
+    box-shadow: 0 1px 2px var(--shadow);
+}
+
+main {
+    min-height: 70vh;
+}
+
+.container {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 1px 2px var(--shadow);
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 1px solid var(--border);
+    color: #64748b;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+h3 { 
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+p { margin-bottom: 1rem; }
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover { 
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+pre, code {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: ui-monospace, monospace;
+}
+
+pre { 
+    padding: 1rem; 
+    margin: 1rem 0; 
+    overflow-x: auto; 
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+button:hover { 
+    background: var(--primary-light);
+}
+
+.status {
+    margin-top: 1rem;
+}
+
+.status dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    background: var(--bg);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.status dt {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.status dd {
+    color: var(--text);
+}

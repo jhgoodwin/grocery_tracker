@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome - Local First{% endblock %}
+
+{% block header %}
+<h1>Welcome to Local First</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div id="content" hx-trigger="load" hx-get="/api/status" hx-swap="innerHTML">
+        Loading...
+    </div>
+</div>
+{% endblock %}

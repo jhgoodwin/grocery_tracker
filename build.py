@@ -171,15 +171,14 @@ class Builder:
         # TODO: Implement deployment logic
 
     @task(depends_on=["config"])
-    def run(self, host: str = '127.0.0.1', port: int = 8000):
+    def run(self):
         """Run the FastAPI server and website"""
         def _setup_parser(parser: argparse.ArgumentParser) -> None:
-            parser.add_argument('--host', default='127.0.0.1', help='Host to bind to')
-            parser.add_argument('--port', type=int, default=8000, help='Port to listen on')
+            pass
 
         logger.info("Starting FastAPI server...")
         from webapp.main import main
-        main(host=host, port=port)
+        main()
 
     @task()
     def setup(self):
@@ -187,7 +186,7 @@ class Builder:
         logger.info("Setting up environment...")
         
         try:
-            subprocess.run(["uv", "pip", "install", "--upgrade", "."], check=True)
+            subprocess.run(["uv", "sync"], check=True)
         except FileNotFoundError:
             logger.error("uv not found. Please install uv first: pip install uv")
             raise
