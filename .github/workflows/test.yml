@@ -18,13 +18,20 @@ jobs:
           python-version: '3.13'
           
       - name: Install dependencies
-        run: pip install uv
+        run: |
+          pip install uv
+          uv venv .venv
+          source .venv/bin/activate
         
       - name: Setup environment
         run: cp .env.example .env
         
       - name: Configure
-        run: python build.py config
+        run: |
+          source .venv/bin/activate
+          python build.py config
         
       - name: Test
-        run: python build.py test
+        run: |
+          source .venv/bin/activate
+          python build.py test
