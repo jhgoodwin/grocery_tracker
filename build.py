@@ -188,7 +188,7 @@ class Builder:
         try:
             subprocess.run(["uv", "sync"], check=True)
         except FileNotFoundError:
-            logger.error("uv not found. Please install uv first: pip install uv")
+            logger.error("uv not found. Please install uv first: brew install uv")
             raise
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to install dependencies: {e}")
@@ -197,8 +197,15 @@ class Builder:
     @task(depends_on=["setup"])
     def test(self):
         """Run tests using pytest"""
+        import pytest
         logger.info("Running tests...")
-        # TODO: Implement pytest integration
+        try:
+            exit_code = pytest.main(["src/tests", "-v"])
+            if exit_code != 0:
+                raise RuntimeError(f"Tests failed with exit code {exit_code}")
+        except Exception as e:
+            logger.error(f"Tests failed: {e}")
+            raise
 
     # endregion Task parsers
 

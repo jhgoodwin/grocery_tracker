@@ -27,6 +27,7 @@ app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 async def root(request: Request):
     logger.info("Root endpoint called")
     return templates.TemplateResponse(
+        request,
         "index.html",
         {"request": request}
     )

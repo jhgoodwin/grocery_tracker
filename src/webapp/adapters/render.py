@@ -12,7 +12,7 @@ class RenderDecorator:
             async def wrapper(request: Request, *args, **kwargs):
                 data = await func(request, *args, **kwargs)
                 if request.headers.get("HX-Request") == "true":
-                    return self.templates.TemplateResponse(template_name, {"request": request, **data})
+                    return self.templates.TemplateResponse(request, template_name, {"request": request, **data})
                 return data
             return wrapper
         return decorator
