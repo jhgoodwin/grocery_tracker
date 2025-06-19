@@ -52,7 +52,7 @@ def main():
     host = os.getenv('SERVER_HOST', '127.0.0.1')
     port = int(os.getenv('SERVER_PORT', '8000'))
     protocol = os.getenv('SERVER_PROTOCOL', 'http')
-    logger.info(f"Starting server on {protocol}://{host}:{port}")
+    logger.info(f"Starting server: {protocol}://{host}:{port}")
     uvicorn.run(
         "webapp.main:app",
         host=host,
