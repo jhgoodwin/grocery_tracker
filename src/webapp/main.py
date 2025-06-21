@@ -1,17 +1,50 @@
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from starlette.middleware.sessions import SessionMiddleware
 import uvicorn
 from dotenv import load_dotenv
 import logging
 import os
 from pathlib import Path
+from sqlmodel import SQLModel
+import glob
 from webapp.adapters.render import RenderDecorator
+from webapp.stores.routes import router as stores_router
+from webapp.products.routes import router as products_router
 
 load_dotenv()
 
 logger = logging.getLogger(__name__)
 app = FastAPI()
+
+from webapp.config import engine
+
+def run_migrations():
+    """Run all migrations in order"""
+    migrations_dir = Path(__file__).parent / 'migrations'
+    migration_files = sorted(glob.glob(str(migrations_dir / '*.py')))
+    
+    for migration_file in migration_files:
+        if migration_file.endswith('__init__.py'):
+            continue
+        module_path = f"webapp.migrations.{Path(migration_file).stem}"
+        migration_module = __import__(module_path, fromlist=['run_migration'])
+        migration_module.run_migration(engine)
+        logger.info(f"Ran migration {module_path}")
+
+# Ensure database and tables exist
+run_migrations()
+
+# Add session middleware
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=os.getenv('SESSION_SECRET_KEY', 'dev-secret-key-do-not-use-in-production')
+)
+
+# Include routers
+app.include_router(stores_router)
+app.include_router(products_router)
 
 # Configure static files and templates
 BASE_DIR = Path(__file__).parent
@@ -24,13 +57,10 @@ app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
 
 @app.get("/")
+@render("index.html", always=True)
 async def root(request: Request):
     logger.info("Root endpoint called")
-    return templates.TemplateResponse(
-        request,
-        "index.html",
-        {"request": request}
-    )
+    return {}
 
 
 @app.get("/api/status")

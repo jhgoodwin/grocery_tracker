@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}Welcome - Local First{% endblock %}
+{% block title %}Grocery Tracker{% endblock %}
 
 {% block header %}
-<h1>Welcome to Local First</h1>
+<h1>Grocery Tracker</h1>
 {% endblock %}
 
 {% block content %}
 <div class="container">
+    <nav class="mb-4">
+        <a href="/products" class="btn btn-primary">Manage Products</a>
+    </nav>
     <div id="content" hx-trigger="load" hx-get="/api/status" hx-swap="innerHTML">
         Loading...
     </div>

@@ -6,13 +6,13 @@ class RenderDecorator:
     def __init__(self, templates: Jinja2Templates):
         self.templates = templates
 
-    def __call__(self, template_name: str):
+    def __call__(self, template_name: str, always: bool = False):
         def decorator(func):
             @wraps(func)
             async def wrapper(request: Request, *args, **kwargs):
                 data = await func(request, *args, **kwargs)
-                if request.headers.get("HX-Request") == "true":
-                    return self.templates.TemplateResponse(request, template_name, {"request": request, **data})
+                if always or request.headers.get("HX-Request") == "true":
+                    return self.templates.TemplateResponse(request, template_name, data)
                 return data
             return wrapper
         return decorator

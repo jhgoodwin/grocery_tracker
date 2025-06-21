@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mx-auto px-4">
+    <div class="flex justify-between items-center mb-4">
+        <h1 class="text-2xl font-bold">Products</h1>
+        <div class="flex gap-2">
+            <form action="/products/import-plu" method="post">
+                <button type="submit" class="btn btn-primary">Import PLU Commodities</button>
+            </form>
+            <form action="/products/import-plu-products" method="post">
+                <button type="submit" class="btn btn-secondary">Convert PLUs to Products</button>
+            </form>
+        </div>
+    </div>
+    <div id="products-list">
+        <!-- Product list will be populated here -->
+    </div>
+</div>
+{% endblock %}

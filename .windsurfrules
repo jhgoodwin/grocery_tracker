@@ -1,8 +1,6 @@
-# Local First Demo
+# Grocery Tracker
 
-FastAPI application with local-first build, test, run, and deploy system.
-
-Website meant to demystify web technologies by decreasing cost to experiment.
+Tracks grocery items and prices.
 
 ## Tech Stack
 
@@ -13,7 +11,7 @@ Website meant to demystify web technologies by decreasing cost to experiment.
 - SQLModel
 - uv
 - uvicorn
-- pytest
+- pytest in `src/tests`
 
 ## Coding Style
 
@@ -38,4 +36,5 @@ Website meant to demystify web technologies by decreasing cost to experiment.
 ## Entry Point
 
 - build.py for all tasks
+- `./build.py test` for tests
 - main.py for application
