@@ -2,21 +2,47 @@
 from fastapi import APIRouter, Request, Depends
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
-from sqlmodel import Session
-from sqlmodel.orm.session import Session
+from sqlmodel import Session, select, text, or_
+from sqlalchemy import func, cast, String
 
 from webapp.database import get_session
 from webapp.products.etl import import_plu_commodities, import_all_plu_to_products
+from webapp.products.models import Product
 
 router = APIRouter(prefix="/products", tags=["products"])
 templates = Jinja2Templates(directory="src/webapp/templates")
 
 @router.get("/", response_class=HTMLResponse)
-async def list_products(request: Request):
-    """List all products."""
+async def list_products(
+    request: Request,
+    session: Session = Depends(get_session),
+    q: str = "",
+    page: int = 1
+):
+    """List products with search and pagination."""
+    per_page = 100
+    offset = (page - 1) * per_page
+    
+    stmt = select(Product)
+    if q:
+        stmt = stmt.where(cast(Product.name, String).ilike(f"%{q}%"))
+    
+    total = session.scalar(select(func.count()).select_from(stmt.subquery())) or 0
+    products = session.exec(
+        stmt.order_by(Product.name).offset(offset).limit(per_page)
+    ).all()
+    total_pages = (total + per_page - 1) // per_page
+    
     return templates.TemplateResponse(
         "products/list.html",
-        {"request": request}
+        {
+            "request": request,
+            "products": products,
+            "q": q,
+            "page": page,
+            "total_pages": total_pages,
+            "total": total
+        }
     )
 
 @router.post("/import-plu")

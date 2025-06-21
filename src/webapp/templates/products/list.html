@@ -12,8 +12,60 @@
             </form>
         </div>
     </div>
-    <div id="products-list">
-        <!-- Product list will be populated here -->
+
+    <div class="mb-4">
+        <form method="get" class="flex gap-2">
+            <input type="text" name="q" value="{{ q }}" placeholder="Search products..." 
+                   class="input input-bordered w-full max-w-xs" 
+                   hx-get="/products" 
+                   hx-trigger="keyup changed delay:500ms" 
+                   hx-target="#products-list"
+                   hx-push-url="true"/>
+        </form>
+    </div>
+
+    <div id="products-list" class="space-y-4">
+        {% if products %}
+            <div class="overflow-x-auto">
+                <table class="table table-zebra w-full">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Brand</th>
+                            <th>UPC</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                            <tr>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.brand or '-' }}</td>
+                                <td>{{ product.upc or '-' }}</td>
+                                <td>{{ product.unit }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <div>Showing {{ products|length }} of {{ total }} products</div>
+                <div class="join">
+                    {% if page > 1 %}
+                        <a href="?page={{ page-1 }}&q={{ q }}" class="join-item btn">Previous</a>
+                    {% endif %}
+                    <button class="join-item btn btn-active">{{ page }}</button>
+                    {% if page < total_pages %}
+                        <a href="?page={{ page+1 }}&q={{ q }}" class="join-item btn">Next</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <div class="text-center py-8 text-gray-500">
+                No products found.
+            </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
