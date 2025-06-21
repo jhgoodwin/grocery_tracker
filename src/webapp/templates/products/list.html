@@ -24,6 +24,14 @@
                             Convert PLUs to Products
                         </button>
                     </form>
+                    <form action="/products/fake-prices" method="post">
+                        <button type="submit" class="btn btn-secondary bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-lg shadow-sm transition-colors">
+                            <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Generate Fake Prices
+                        </button>
+                    </form>
                 </div>
             </div>
 
@@ -56,6 +64,9 @@
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Brand</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">UPC</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Lowest Price</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Store</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Observed</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
@@ -65,6 +76,16 @@
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ product.brand or '-' }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-mono">{{ product.upc or '-' }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ product.unit }}</td>
+                                        {% if product.id in prices %}
+                                            {% set price = prices[product.id] %}
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">${{ "%.2f"|format(price.price) }}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ price.store.name }}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ price.observed_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                                        {% else %}
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">-</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">-</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">-</td>
+                                        {% endif %}
                                     </tr>
                                 {% endfor %}
                             </tbody>

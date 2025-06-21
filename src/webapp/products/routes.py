@@ -2,12 +2,13 @@
 from fastapi import APIRouter, Request, Depends
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
-from sqlmodel import Session, select, text, or_
-from sqlalchemy import func, cast, String
+from sqlmodel import Session, select, text, or_, col
+from sqlalchemy import func, cast, String, desc, asc
 
 from webapp.database import get_session
 from webapp.products.etl import import_plu_commodities, import_all_plu_to_products
-from webapp.products.models import Product
+from webapp.products.models import Product, ProductPrice
+from webapp.products.fakeit import make_fake_prices
 
 router = APIRouter(prefix="/products", tags=["products"])
 templates = Jinja2Templates(directory="src/webapp/templates")
@@ -33,6 +34,24 @@ async def list_products(
     ).all()
     total_pages = (total + per_page - 1) // per_page
     
+    # Get lowest prices for each product
+    product_ids = [p.id for p in products]
+    if product_ids:
+        prices_stmt = (
+            select(ProductPrice)
+            .where(col(ProductPrice.product_id).in_(product_ids))
+            .order_by(asc(ProductPrice.price))
+        )
+        prices = session.exec(prices_stmt).all()
+        
+        # Group by product_id, keeping lowest price
+        prices_by_product = {}
+        for price in prices:
+            if price.product_id not in prices_by_product:
+                prices_by_product[price.product_id] = price
+    else:
+        prices_by_product = {}
+    
     return templates.TemplateResponse(
         "products/list.html",
         {
@@ -41,9 +60,22 @@ async def list_products(
             "q": q,
             "page": page,
             "total_pages": total_pages,
-            "total": total
+            "total": total,
+            "prices": prices_by_product
         }
     )
+
+@router.post("/fake-prices")
+async def generate_fake_prices(
+    request: Request,
+    session: Session = Depends(get_session)
+):
+    """Generate fake prices for products."""
+    prices = make_fake_prices(session)
+    for price in prices:
+        session.add(price)
+    session.commit()
+    return RedirectResponse(url="/products", status_code=303)
 
 @router.post("/import-plu")
 async def import_plu(
