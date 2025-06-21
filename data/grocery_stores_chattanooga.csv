@@ -1,0 +1,115 @@
+name,address,city,state,zip_code,phone,rating,created_at,updated_at,is_active
+Publix Super Market on North Market Street,"400 N Market St, Chattanooga, TN 37405, USA","Chattanooga, TN",TN,,(423) 755-7901,4.6,2025-06-21 18:02:46.298481,2025-06-21 18:02:46.298575,True
+Food City,"1375 Broad St, Chattanooga, TN 37402, USA","Chattanooga, TN",TN,,(423) 508-6910,4.4,2025-06-21 18:02:46.504734,2025-06-21 18:02:46.504744,True
+Whole Foods Market,"301 Manufacturers Rd, Chattanooga, TN 37405, USA","Chattanooga, TN",TN,,(423) 702-7300,4.4,2025-06-21 18:02:46.691852,2025-06-21 18:02:46.691863,True
+IGA,"2300 Dodson Ave, Chattanooga, TN 37406, USA","Chattanooga, TN",TN,,(423) 541-5200,3.8,2025-06-21 18:02:46.864956,2025-06-21 18:02:46.864972,True
+The Fresh Market,"2288 Gunbarrel Rd #124, Chattanooga, TN 37421, USA","Chattanooga, TN",TN,,(423) 499-4223,4.5,2025-06-21 18:02:47.049816,2025-06-21 18:02:47.049828,True
+Publix Super Market at Mount Vernon Point,"3535 Broad St, Chattanooga, TN 37409, USA","Chattanooga, TN",TN,,(423) 668-5233,4.6,2025-06-21 18:02:47.214299,2025-06-21 18:02:47.214312,True
+Food City,"3801 Tennessee Ave, Chattanooga, TN 37409, USA","Chattanooga, TN",TN,,(423) 821-0023,4.3,2025-06-21 18:02:47.384569,2025-06-21 18:02:47.384573,True
+ALDI,"637 Mundy St, Chattanooga, TN 37405, USA","Chattanooga, TN",TN,,(855) 955-2534,4.6,2025-06-21 18:02:47.515707,2025-06-21 18:02:47.515737,True
+Publix Super Market at Village at Waterside,"7326 McCutcheon Rd, Chattanooga, TN 37421, USA","Chattanooga, TN",TN,,(423) 855-1376,4.7,2025-06-21 18:02:47.678447,2025-06-21 18:02:47.678457,True
+Trader Joe's,"2111 Gunbarrel Rd, Chattanooga, TN 37421, USA","Chattanooga, TN",TN,,(423) 855-1310,4.7,2025-06-21 18:02:47.860927,2025-06-21 18:02:47.862531,True
+Rogers Quik Mart,"1408 E Main St, Chattanooga, TN 37404, USA","Chattanooga, TN",TN,,(423) 622-3119,3.9,2025-06-21 18:02:48.034712,2025-06-21 18:02:48.034742,True
+United Grocery Outlet,"4758 TN-58, Chattanooga, TN 37416, USA","Chattanooga, TN",TN,,(423) 892-5183,4.3,2025-06-21 18:02:48.186623,2025-06-21 18:02:48.186631,True
+Food City,"6651 Lee Hwy, Chattanooga, TN 37421, USA","Chattanooga, TN",TN,,(423) 855-3072,4.1,2025-06-21 18:02:48.345843,2025-06-21 18:02:48.345852,True
+Food City,"3636 Ringgold Rd, East Ridge, TN 37412, USA","Chattanooga, TN",TN,,(423) 493-4050,4.2,2025-06-21 18:02:48.517738,2025-06-21 18:02:48.517760,True
+Food City,"703 Signal Mountain Rd, Chattanooga, TN 37405, USA","Chattanooga, TN",TN,,(423) 757-4670,4.2,2025-06-21 18:02:48.648907,2025-06-21 18:02:48.648918,True
+Food City,"3901 Dayton Blvd, Red Bank, TN 37415, USA","Chattanooga, TN",TN,,(423) 877-1515,4.3,2025-06-21 18:02:48.848528,2025-06-21 18:02:48.848540,True
+Food City,"5604 Hixson Pike, Hixson, TN 37343, USA","Chattanooga, TN",TN,,(423) 842-3500,4.4,2025-06-21 18:02:49.011357,2025-06-21 18:02:49.011365,True
+ALDI,"5706 Lee Hwy, Chattanooga, TN 37421, USA","Chattanooga, TN",TN,,(855) 955-2534,4.5,2025-06-21 18:02:49.171932,2025-06-21 18:02:49.171941,True
+Whole Foods Market,"1814 Gunbarrel Rd #100, Chattanooga, TN 37421, USA","Chattanooga, TN",TN,,(423) 425-9133,4.4,2025-06-21 18:02:49.292362,2025-06-21 18:02:49.292374,True
+Publix Super Market on North Market Street,"400 N Market St, Chattanooga, TN 37405, USA","Hixson, TN",TN,,(423) 755-7901,4.6,2025-06-21 18:02:49.487648,2025-06-21 18:02:49.487659,True
+Food City,"1375 Broad St, Chattanooga, TN 37402, USA","Hixson, TN",TN,,(423) 508-6910,4.4,2025-06-21 18:02:49.563434,2025-06-21 18:02:49.563445,True
+Whole Foods Market,"301 Manufacturers Rd, Chattanooga, TN 37405, USA","Hixson, TN",TN,,(423) 702-7300,4.4,2025-06-21 18:02:49.638941,2025-06-21 18:02:49.638953,True
+IGA,"2300 Dodson Ave, Chattanooga, TN 37406, USA","Hixson, TN",TN,,(423) 541-5200,3.8,2025-06-21 18:02:49.724616,2025-06-21 18:02:49.724627,True
+The Fresh Market,"2288 Gunbarrel Rd #124, Chattanooga, TN 37421, USA","Hixson, TN",TN,,(423) 499-4223,4.5,2025-06-21 18:02:49.846446,2025-06-21 18:02:49.846458,True
+Publix Super Market at Mount Vernon Point,"3535 Broad St, Chattanooga, TN 37409, USA","Hixson, TN",TN,,(423) 668-5233,4.6,2025-06-21 18:02:49.921194,2025-06-21 18:02:49.921209,True
+Food City,"3801 Tennessee Ave, Chattanooga, TN 37409, USA","Hixson, TN",TN,,(423) 821-0023,4.3,2025-06-21 18:02:49.999005,2025-06-21 18:02:49.999118,True
+ALDI,"637 Mundy St, Chattanooga, TN 37405, USA","Hixson, TN",TN,,(855) 955-2534,4.6,2025-06-21 18:02:50.086113,2025-06-21 18:02:50.086122,True
+Publix Super Market at Village at Waterside,"7326 McCutcheon Rd, Chattanooga, TN 37421, USA","Hixson, TN",TN,,(423) 855-1376,4.7,2025-06-21 18:02:50.196349,2025-06-21 18:02:50.196362,True
+Trader Joe's,"2111 Gunbarrel Rd, Chattanooga, TN 37421, USA","Hixson, TN",TN,,(423) 855-1310,4.7,2025-06-21 18:02:50.282367,2025-06-21 18:02:50.282377,True
+Rogers Quik Mart,"1408 E Main St, Chattanooga, TN 37404, USA","Hixson, TN",TN,,(423) 622-3119,3.9,2025-06-21 18:02:50.364722,2025-06-21 18:02:50.364727,True
+United Grocery Outlet,"4758 TN-58, Chattanooga, TN 37416, USA","Hixson, TN",TN,,(423) 892-5183,4.3,2025-06-21 18:02:50.443607,2025-06-21 18:02:50.443619,True
+Food City,"6651 Lee Hwy, Chattanooga, TN 37421, USA","Hixson, TN",TN,,(423) 855-3072,4.1,2025-06-21 18:02:50.521251,2025-06-21 18:02:50.521261,True
+Food City,"3636 Ringgold Rd, East Ridge, TN 37412, USA","Hixson, TN",TN,,(423) 493-4050,4.2,2025-06-21 18:02:50.640797,2025-06-21 18:02:50.640821,True
+Food City,"703 Signal Mountain Rd, Chattanooga, TN 37405, USA","Hixson, TN",TN,,(423) 757-4670,4.2,2025-06-21 18:02:50.727458,2025-06-21 18:02:50.727473,True
+Food City,"3901 Dayton Blvd, Red Bank, TN 37415, USA","Hixson, TN",TN,,(423) 877-1515,4.3,2025-06-21 18:02:50.811211,2025-06-21 18:02:50.811215,True
+Food City,"5604 Hixson Pike, Hixson, TN 37343, USA","Hixson, TN",TN,,(423) 842-3500,4.4,2025-06-21 18:02:50.919963,2025-06-21 18:02:50.919984,True
+ALDI,"5706 Lee Hwy, Chattanooga, TN 37421, USA","Hixson, TN",TN,,(855) 955-2534,4.5,2025-06-21 18:02:50.986097,2025-06-21 18:02:50.986111,True
+Whole Foods Market,"1814 Gunbarrel Rd #100, Chattanooga, TN 37421, USA","Hixson, TN",TN,,(423) 425-9133,4.4,2025-06-21 18:02:51.072778,2025-06-21 18:02:51.072794,True
+Publix Super Market on North Market Street,"400 N Market St, Chattanooga, TN 37405, USA","East Ridge, TN",TN,,(423) 755-7901,4.6,2025-06-21 18:02:51.249555,2025-06-21 18:02:51.249560,True
+Food City,"1375 Broad St, Chattanooga, TN 37402, USA","East Ridge, TN",TN,,(423) 508-6910,4.4,2025-06-21 18:02:51.324599,2025-06-21 18:02:51.324603,True
+Whole Foods Market,"301 Manufacturers Rd, Chattanooga, TN 37405, USA","East Ridge, TN",TN,,(423) 702-7300,4.4,2025-06-21 18:02:51.390119,2025-06-21 18:02:51.390124,True
+IGA,"2300 Dodson Ave, Chattanooga, TN 37406, USA","East Ridge, TN",TN,,(423) 541-5200,3.8,2025-06-21 18:02:51.458006,2025-06-21 18:02:51.458012,True
+The Fresh Market,"2288 Gunbarrel Rd #124, Chattanooga, TN 37421, USA","East Ridge, TN",TN,,(423) 499-4223,4.5,2025-06-21 18:02:51.536923,2025-06-21 18:02:51.536927,True
+Publix Super Market at Mount Vernon Point,"3535 Broad St, Chattanooga, TN 37409, USA","East Ridge, TN",TN,,(423) 668-5233,4.6,2025-06-21 18:02:51.615699,2025-06-21 18:02:51.615703,True
+Food City,"3801 Tennessee Ave, Chattanooga, TN 37409, USA","East Ridge, TN",TN,,(423) 821-0023,4.3,2025-06-21 18:02:51.690299,2025-06-21 18:02:51.690304,True
+ALDI,"637 Mundy St, Chattanooga, TN 37405, USA","East Ridge, TN",TN,,(855) 955-2534,4.6,2025-06-21 18:02:51.756121,2025-06-21 18:02:51.756126,True
+Publix Super Market at Village at Waterside,"7326 McCutcheon Rd, Chattanooga, TN 37421, USA","East Ridge, TN",TN,,(423) 855-1376,4.7,2025-06-21 18:02:51.832357,2025-06-21 18:02:51.832361,True
+Trader Joe's,"2111 Gunbarrel Rd, Chattanooga, TN 37421, USA","East Ridge, TN",TN,,(423) 855-1310,4.7,2025-06-21 18:02:51.920411,2025-06-21 18:02:51.920414,True
+Rogers Quik Mart,"1408 E Main St, Chattanooga, TN 37404, USA","East Ridge, TN",TN,,(423) 622-3119,3.9,2025-06-21 18:02:52.007224,2025-06-21 18:02:52.007229,True
+United Grocery Outlet,"4758 TN-58, Chattanooga, TN 37416, USA","East Ridge, TN",TN,,(423) 892-5183,4.3,2025-06-21 18:02:52.073113,2025-06-21 18:02:52.073116,True
+Food City,"6651 Lee Hwy, Chattanooga, TN 37421, USA","East Ridge, TN",TN,,(423) 855-3072,4.1,2025-06-21 18:02:52.149265,2025-06-21 18:02:52.149270,True
+Food City,"3636 Ringgold Rd, East Ridge, TN 37412, USA","East Ridge, TN",TN,,(423) 493-4050,4.2,2025-06-21 18:02:52.224951,2025-06-21 18:02:52.224955,True
+Food City,"703 Signal Mountain Rd, Chattanooga, TN 37405, USA","East Ridge, TN",TN,,(423) 757-4670,4.2,2025-06-21 18:02:52.299614,2025-06-21 18:02:52.299619,True
+Food City,"3901 Dayton Blvd, Red Bank, TN 37415, USA","East Ridge, TN",TN,,(423) 877-1515,4.3,2025-06-21 18:02:52.366067,2025-06-21 18:02:52.366077,True
+Food City,"5604 Hixson Pike, Hixson, TN 37343, USA","East Ridge, TN",TN,,(423) 842-3500,4.4,2025-06-21 18:02:52.441740,2025-06-21 18:02:52.441750,True
+ALDI,"5706 Lee Hwy, Chattanooga, TN 37421, USA","East Ridge, TN",TN,,(855) 955-2534,4.5,2025-06-21 18:02:52.517885,2025-06-21 18:02:52.517893,True
+Whole Foods Market,"1814 Gunbarrel Rd #100, Chattanooga, TN 37421, USA","East Ridge, TN",TN,,(423) 425-9133,4.4,2025-06-21 18:02:52.583083,2025-06-21 18:02:52.583094,True
+Publix Super Market on North Market Street,"400 N Market St, Chattanooga, TN 37405, USA","Red Bank, TN",TN,,(423) 755-7901,4.6,2025-06-21 18:02:52.767533,2025-06-21 18:02:52.767537,True
+Food City,"1375 Broad St, Chattanooga, TN 37402, USA","Red Bank, TN",TN,,(423) 508-6910,4.4,2025-06-21 18:02:52.842854,2025-06-21 18:02:52.842859,True
+Whole Foods Market,"301 Manufacturers Rd, Chattanooga, TN 37405, USA","Red Bank, TN",TN,,(423) 702-7300,4.4,2025-06-21 18:02:52.939677,2025-06-21 18:02:52.939688,True
+IGA,"2300 Dodson Ave, Chattanooga, TN 37406, USA","Red Bank, TN",TN,,(423) 541-5200,3.8,2025-06-21 18:02:53.019357,2025-06-21 18:02:53.019362,True
+The Fresh Market,"2288 Gunbarrel Rd #124, Chattanooga, TN 37421, USA","Red Bank, TN",TN,,(423) 499-4223,4.5,2025-06-21 18:02:53.103144,2025-06-21 18:02:53.103154,True
+Publix Super Market at Mount Vernon Point,"3535 Broad St, Chattanooga, TN 37409, USA","Red Bank, TN",TN,,(423) 668-5233,4.6,2025-06-21 18:02:53.181346,2025-06-21 18:02:53.181359,True
+Food City,"3801 Tennessee Ave, Chattanooga, TN 37409, USA","Red Bank, TN",TN,,(423) 821-0023,4.3,2025-06-21 18:02:53.254444,2025-06-21 18:02:53.254451,True
+ALDI,"637 Mundy St, Chattanooga, TN 37405, USA","Red Bank, TN",TN,,(855) 955-2534,4.6,2025-06-21 18:02:53.330681,2025-06-21 18:02:53.330697,True
+Publix Super Market at Village at Waterside,"7326 McCutcheon Rd, Chattanooga, TN 37421, USA","Red Bank, TN",TN,,(423) 855-1376,4.7,2025-06-21 18:02:53.416408,2025-06-21 18:02:53.416416,True
+Trader Joe's,"2111 Gunbarrel Rd, Chattanooga, TN 37421, USA","Red Bank, TN",TN,,(423) 855-1310,4.7,2025-06-21 18:02:53.486985,2025-06-21 18:02:53.486995,True
+Rogers Quik Mart,"1408 E Main St, Chattanooga, TN 37404, USA","Red Bank, TN",TN,,(423) 622-3119,3.9,2025-06-21 18:02:53.575230,2025-06-21 18:02:53.575245,True
+United Grocery Outlet,"4758 TN-58, Chattanooga, TN 37416, USA","Red Bank, TN",TN,,(423) 892-5183,4.3,2025-06-21 18:02:53.652865,2025-06-21 18:02:53.652875,True
+Food City,"6651 Lee Hwy, Chattanooga, TN 37421, USA","Red Bank, TN",TN,,(423) 855-3072,4.1,2025-06-21 18:02:53.730385,2025-06-21 18:02:53.730402,True
+Food City,"3636 Ringgold Rd, East Ridge, TN 37412, USA","Red Bank, TN",TN,,(423) 493-4050,4.2,2025-06-21 18:02:53.816523,2025-06-21 18:02:53.816533,True
+Food City,"703 Signal Mountain Rd, Chattanooga, TN 37405, USA","Red Bank, TN",TN,,(423) 757-4670,4.2,2025-06-21 18:02:53.892248,2025-06-21 18:02:53.892265,True
+Food City,"3901 Dayton Blvd, Red Bank, TN 37415, USA","Red Bank, TN",TN,,(423) 877-1515,4.3,2025-06-21 18:02:53.980067,2025-06-21 18:02:53.980074,True
+Food City,"5604 Hixson Pike, Hixson, TN 37343, USA","Red Bank, TN",TN,,(423) 842-3500,4.4,2025-06-21 18:02:54.078182,2025-06-21 18:02:54.078193,True
+ALDI,"5706 Lee Hwy, Chattanooga, TN 37421, USA","Red Bank, TN",TN,,(855) 955-2534,4.5,2025-06-21 18:02:54.154769,2025-06-21 18:02:54.154778,True
+Whole Foods Market,"1814 Gunbarrel Rd #100, Chattanooga, TN 37421, USA","Red Bank, TN",TN,,(423) 425-9133,4.4,2025-06-21 18:02:54.232213,2025-06-21 18:02:54.232223,True
+Publix Super Market on North Market Street,"400 N Market St, Chattanooga, TN 37405, USA","Signal Mountain, TN",TN,,(423) 755-7901,4.6,2025-06-21 18:02:54.374438,2025-06-21 18:02:54.374447,True
+Food City,"1375 Broad St, Chattanooga, TN 37402, USA","Signal Mountain, TN",TN,,(423) 508-6910,4.4,2025-06-21 18:02:54.452059,2025-06-21 18:02:54.452063,True
+Whole Foods Market,"301 Manufacturers Rd, Chattanooga, TN 37405, USA","Signal Mountain, TN",TN,,(423) 702-7300,4.4,2025-06-21 18:02:54.529043,2025-06-21 18:02:54.529050,True
+IGA,"2300 Dodson Ave, Chattanooga, TN 37406, USA","Signal Mountain, TN",TN,,(423) 541-5200,3.8,2025-06-21 18:02:54.594519,2025-06-21 18:02:54.594524,True
+The Fresh Market,"2288 Gunbarrel Rd #124, Chattanooga, TN 37421, USA","Signal Mountain, TN",TN,,(423) 499-4223,4.5,2025-06-21 18:02:54.681533,2025-06-21 18:02:54.681538,True
+Publix Super Market at Mount Vernon Point,"3535 Broad St, Chattanooga, TN 37409, USA","Signal Mountain, TN",TN,,(423) 668-5233,4.6,2025-06-21 18:02:54.802116,2025-06-21 18:02:54.802121,True
+Food City,"3801 Tennessee Ave, Chattanooga, TN 37409, USA","Signal Mountain, TN",TN,,(423) 821-0023,4.3,2025-06-21 18:02:54.869084,2025-06-21 18:02:54.869089,True
+ALDI,"637 Mundy St, Chattanooga, TN 37405, USA","Signal Mountain, TN",TN,,(855) 955-2534,4.6,2025-06-21 18:02:54.945830,2025-06-21 18:02:54.945836,True
+Publix Super Market at Village at Waterside,"7326 McCutcheon Rd, Chattanooga, TN 37421, USA","Signal Mountain, TN",TN,,(423) 855-1376,4.7,2025-06-21 18:02:55.033733,2025-06-21 18:02:55.033738,True
+Trader Joe's,"2111 Gunbarrel Rd, Chattanooga, TN 37421, USA","Signal Mountain, TN",TN,,(423) 855-1310,4.7,2025-06-21 18:02:55.100383,2025-06-21 18:02:55.100387,True
+Rogers Quik Mart,"1408 E Main St, Chattanooga, TN 37404, USA","Signal Mountain, TN",TN,,(423) 622-3119,3.9,2025-06-21 18:02:55.176975,2025-06-21 18:02:55.176995,True
+United Grocery Outlet,"4758 TN-58, Chattanooga, TN 37416, USA","Signal Mountain, TN",TN,,(423) 892-5183,4.3,2025-06-21 18:02:55.253917,2025-06-21 18:02:55.253937,True
+Food City,"6651 Lee Hwy, Chattanooga, TN 37421, USA","Signal Mountain, TN",TN,,(423) 855-3072,4.1,2025-06-21 18:02:55.336152,2025-06-21 18:02:55.336171,True
+Food City,"3636 Ringgold Rd, East Ridge, TN 37412, USA","Signal Mountain, TN",TN,,(423) 493-4050,4.2,2025-06-21 18:02:55.416784,2025-06-21 18:02:55.416801,True
+Food City,"703 Signal Mountain Rd, Chattanooga, TN 37405, USA","Signal Mountain, TN",TN,,(423) 757-4670,4.2,2025-06-21 18:02:55.492798,2025-06-21 18:02:55.492824,True
+Food City,"3901 Dayton Blvd, Red Bank, TN 37415, USA","Signal Mountain, TN",TN,,(423) 877-1515,4.3,2025-06-21 18:02:55.556911,2025-06-21 18:02:55.556926,True
+Food City,"5604 Hixson Pike, Hixson, TN 37343, USA","Signal Mountain, TN",TN,,(423) 842-3500,4.4,2025-06-21 18:02:55.644651,2025-06-21 18:02:55.644659,True
+ALDI,"5706 Lee Hwy, Chattanooga, TN 37421, USA","Signal Mountain, TN",TN,,(855) 955-2534,4.5,2025-06-21 18:02:55.712912,2025-06-21 18:02:55.712921,True
+Whole Foods Market,"1814 Gunbarrel Rd #100, Chattanooga, TN 37421, USA","Signal Mountain, TN",TN,,(423) 425-9133,4.4,2025-06-21 18:02:55.787789,2025-06-21 18:02:55.787797,True
+Publix Super Market on North Market Street,"400 N Market St, Chattanooga, TN 37405, USA","Soddy-Daisy, TN",TN,,(423) 755-7901,4.6,2025-06-21 18:02:55.957216,2025-06-21 18:02:55.957227,True
+Food City,"1375 Broad St, Chattanooga, TN 37402, USA","Soddy-Daisy, TN",TN,,(423) 508-6910,4.4,2025-06-21 18:02:56.029181,2025-06-21 18:02:56.029187,True
+Whole Foods Market,"301 Manufacturers Rd, Chattanooga, TN 37405, USA","Soddy-Daisy, TN",TN,,(423) 702-7300,4.4,2025-06-21 18:02:56.143256,2025-06-21 18:02:56.143264,True
+IGA,"2300 Dodson Ave, Chattanooga, TN 37406, USA","Soddy-Daisy, TN",TN,,(423) 541-5200,3.8,2025-06-21 18:02:56.209826,2025-06-21 18:02:56.209837,True
+The Fresh Market,"2288 Gunbarrel Rd #124, Chattanooga, TN 37421, USA","Soddy-Daisy, TN",TN,,(423) 499-4223,4.5,2025-06-21 18:02:56.286296,2025-06-21 18:02:56.286306,True
+Publix Super Market at Mount Vernon Point,"3535 Broad St, Chattanooga, TN 37409, USA","Soddy-Daisy, TN",TN,,(423) 668-5233,4.6,2025-06-21 18:02:56.363936,2025-06-21 18:02:56.363949,True
+Food City,"3801 Tennessee Ave, Chattanooga, TN 37409, USA","Soddy-Daisy, TN",TN,,(423) 821-0023,4.3,2025-06-21 18:02:56.460763,2025-06-21 18:02:56.460775,True
+ALDI,"637 Mundy St, Chattanooga, TN 37405, USA","Soddy-Daisy, TN",TN,,(855) 955-2534,4.6,2025-06-21 18:02:56.549995,2025-06-21 18:02:56.550006,True
+Publix Super Market at Village at Waterside,"7326 McCutcheon Rd, Chattanooga, TN 37421, USA","Soddy-Daisy, TN",TN,,(423) 855-1376,4.7,2025-06-21 18:02:56.627264,2025-06-21 18:02:56.627280,True
+Trader Joe's,"2111 Gunbarrel Rd, Chattanooga, TN 37421, USA","Soddy-Daisy, TN",TN,,(423) 855-1310,4.7,2025-06-21 18:02:56.714563,2025-06-21 18:02:56.714580,True
+Rogers Quik Mart,"1408 E Main St, Chattanooga, TN 37404, USA","Soddy-Daisy, TN",TN,,(423) 622-3119,3.9,2025-06-21 18:02:56.791622,2025-06-21 18:02:56.791632,True
+United Grocery Outlet,"4758 TN-58, Chattanooga, TN 37416, USA","Soddy-Daisy, TN",TN,,(423) 892-5183,4.3,2025-06-21 18:02:56.879766,2025-06-21 18:02:56.879780,True
+Food City,"6651 Lee Hwy, Chattanooga, TN 37421, USA","Soddy-Daisy, TN",TN,,(423) 855-3072,4.1,2025-06-21 18:02:56.960515,2025-06-21 18:02:56.960523,True
+Food City,"3636 Ringgold Rd, East Ridge, TN 37412, USA","Soddy-Daisy, TN",TN,,(423) 493-4050,4.2,2025-06-21 18:02:57.043953,2025-06-21 18:02:57.043963,True
+Food City,"703 Signal Mountain Rd, Chattanooga, TN 37405, USA","Soddy-Daisy, TN",TN,,(423) 757-4670,4.2,2025-06-21 18:02:57.129689,2025-06-21 18:02:57.129698,True
+Food City,"3901 Dayton Blvd, Red Bank, TN 37415, USA","Soddy-Daisy, TN",TN,,(423) 877-1515,4.3,2025-06-21 18:02:57.208692,2025-06-21 18:02:57.208701,True
+Food City,"5604 Hixson Pike, Hixson, TN 37343, USA","Soddy-Daisy, TN",TN,,(423) 842-3500,4.4,2025-06-21 18:02:57.272281,2025-06-21 18:02:57.272292,True
+ALDI,"5706 Lee Hwy, Chattanooga, TN 37421, USA","Soddy-Daisy, TN",TN,,(855) 955-2534,4.5,2025-06-21 18:02:57.349247,2025-06-21 18:02:57.349263,True
+Whole Foods Market,"1814 Gunbarrel Rd #100, Chattanooga, TN 37421, USA","Soddy-Daisy, TN",TN,,(423) 425-9133,4.4,2025-06-21 18:02:57.451452,2025-06-21 18:02:57.451461,True

@@ -8,8 +8,9 @@
 
 {% block content %}
 <div class="container">
-    <nav class="mb-4">
-        <a href="/products" class="btn btn-primary">Manage Products</a>
+    <nav class="mb-4 flex gap-4">
+        <a href="/products" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-200">Products</a>
+        <a href="/stores" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-200">Stores</a>
     </nav>
     <div id="content" hx-trigger="load" hx-get="/api/status" hx-swap="innerHTML">
         Loading...
