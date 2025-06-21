@@ -1,0 +1,3 @@
+name,address,city,state,zip_code,phone,rating,created_at,updated_at,is_active
+Publix Super Market on North Market Street,"400 N Market St, Chattanooga, TN 37405, USA","Chattanooga, TN",TN,,(423) 755-7901,4.6,2025-06-21 18:02:46.298481,2025-06-21 18:02:46.298575,True
+Food City,"1375 Broad St, Chattanooga, TN 37402, USA","Chattanooga, TN",TN,,(423) 508-6910,4.4,2025-06-21 18:02:46.504734,2025-06-21 18:02:46.504744,True
